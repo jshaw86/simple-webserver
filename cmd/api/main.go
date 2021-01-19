@@ -13,6 +13,11 @@ func main() {
         w.Write([]byte("ok"))
     })
 
+    http.HandleFunc("/something", func(w http.ResponseWriter, r *http.Request) {
+
+        w.Write([]byte("something"))
+    })
+
 	log.Printf("Listening https://0.0.0.0:8080")
 	log.Fatal(srv.ListenAndServe())
 }
